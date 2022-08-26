@@ -1,31 +1,33 @@
 function getAngkaTerbesarKedua(dataNumbers) {
-    //tulis kode logic kamu di dalam blok ini ya
-    if (Array.isArray(dataNumbers)&& dataNumbers.length >=2) {
-        let angka = dataNumbers 
+  //tulis kode logic kamu di dalam blok ini ya
+  if (Array.isArray(dataNumbers) && dataNumbers.length >= 2) {
+    let angka = new Set(
+      dataNumbers
         .sort((a, b) => {
-            return a - b;
+          return a - b;
         })
-        .reverse();
+        .reverse()
+    );
 
-        return angka[1];
-    }
+    return Array.from(angka)[1];
+  }
 
-    return "Invalid input ! Numerical data is required !";
+  return "Invalid input ! Numerical data is required !";
 }
 
-//EXPECTED RESULT 
-//Ketika function tersebut dipanggil 
+//EXPECTED RESULT
+//Ketika function tersebut dipanggil
 
-const dataAngka = [9,4,7,7,4,2,2,8]
+const dataAngka = [9, 4, 7, 7, 4, 2, 2, 8];
 
-console.log(getAngkaTerbesarKedua(dataAngka))
-//EXPECTED OUTPUT : 
-//8 
+console.log(getAngkaTerbesarKedua(dataAngka));
+//EXPECTED OUTPUT :
+//8
 
-console.log(getAngkaTerbesarKedua(0))
-//EXPECTED OUTPUT : 
+console.log(getAngkaTerbesarKedua(0));
+//EXPECTED OUTPUT :
 //ERROR: (kamu jelasin apa dan kenapa)
 
-console.log(getAngkaTerbesarKedua())
-//EXPECTED OUTPUT : 
+console.log(getAngkaTerbesarKedua());
+//EXPECTED OUTPUT :
 //ERROR: (kamu jelasin apa dan kenapa)
